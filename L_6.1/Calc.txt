@@ -1,0 +1,14 @@
+mem 6
+mem 7
++
+
+mem res
+mem 10
+/
+
+swap
+/
+mem 5
+mem 5
+inv1
++
