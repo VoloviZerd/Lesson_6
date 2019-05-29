@@ -18,7 +18,7 @@ namespace L_6._3
             int k = Int32.Parse(Console.ReadLine());
             int c = k;
             int count = 0;
-            while (c > 1)
+            while (c >= 1)
             {
                 c = c / 10;
                 count++;
@@ -36,7 +36,26 @@ namespace L_6._3
             {
                 Console.Write("{0} ", key[i]);
             }
-#endregion
+            #endregion
+
+#region Анализ строки и деление на группы, кратные размеру ключа
+            string word = "Не следует, однако, забывать о том, что дальнейшее развитие различных форм деятельности играет важную роль в формировании ключевых компонентов планируемого обновления.";
+            char[] charWord = word.ToCharArray();
+
+            Console.WriteLine();
+            var keyGroup = Math.Ceiling((decimal)charWord.Length / count); //количество групп символов, кратный размеру ключа
+            
+            char[] wordGroup = new char[(int)keyGroup]; //Массив групп символов строки, кратный размеру ключа
+            for (int i = 0; i < (int)keyGroup; i++)
+            {
+                int j = 0;
+                while (j % count != 0)
+                {
+                    wordGroup[i] = 
+                    j++;
+                }
+            }
+            #endregion
         }
     }
 }
