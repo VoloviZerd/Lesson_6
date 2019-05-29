@@ -13,6 +13,7 @@ namespace L_6._3
     {
         static void Main(string[] args)
         {
+# region Ввод и анализ ключа
             Console.Write("Ввести ключ: ");
             int k = Int32.Parse(Console.ReadLine());
             int c = k;
@@ -35,6 +36,7 @@ namespace L_6._3
             {
                 Console.Write("{0} ", key[i]);
             }
+#endregion
         }
     }
 }
