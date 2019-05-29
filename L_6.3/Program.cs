@@ -13,6 +13,28 @@ namespace L_6._3
     {
         static void Main(string[] args)
         {
+            Console.Write("Ввести ключ: ");
+            int k = Int32.Parse(Console.ReadLine());
+            int c = k;
+            int count = 0;
+            while (c > 1)
+            {
+                c = c / 10;
+                count++;
+            }
+            c = k;
+            int[] key = new int[count];
+
+            for (int i=0;i<count;i++)
+            {
+                key[count - 1 - i] = c % 10;
+                c = c / 10;
+                
+            }
+            for (int i = 0;i<count;i++)
+            {
+                Console.Write("{0} ", key[i]);
+            }
         }
     }
 }
