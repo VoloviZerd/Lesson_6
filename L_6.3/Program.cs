@@ -13,7 +13,7 @@ namespace L_6._3
     {
         static void Main(string[] args)
         {
-# region Ввод и анализ ключа
+            # region Ввод и анализ ключа
             Console.Write("Ввести ключ: ");
             int k = Int32.Parse(Console.ReadLine());
             int c = k;
@@ -38,21 +38,42 @@ namespace L_6._3
             }
             #endregion
 
-#region Анализ строки и деление на группы, кратные размеру ключа
+            #region Анализ строки и деление на группы, кратные размеру ключа
+
             string word = "Не следует, однако, забывать о том, что дальнейшее развитие различных форм деятельности играет важную роль в формировании ключевых компонентов планируемого обновления.";
             char[] charWord = word.ToCharArray();
 
             Console.WriteLine();
             var keyGroup = Math.Ceiling((decimal)charWord.Length / count); //количество групп символов, кратный размеру ключа
             
-            char[] wordGroup = new char[(int)keyGroup]; //Массив групп символов строки, кратный размеру ключа
+            char[,] wordGroup = new char[(int)keyGroup,count]; //Массив групп символов строки, кратный размеру ключа
+            
+            int f = 0;
             for (int i = 0; i < (int)keyGroup; i++)
             {
                 int j = 0;
-                while (j % count != 0)
+                while (count - j != 0)
                 {
-                    wordGroup[i] = 
+                    if (f < charWord.Length)
+                    {
+                        wordGroup[i, j] = charWord[f];
+                    }
+                    
+                    else
+                    {
+                        wordGroup[i, j] = ' ';
+                    }
                     j++;
+                    f++;
+                    
+                }
+                
+            }
+            for(int i = 0; i < (int)keyGroup;i++)
+            {
+                for (int j = 0; j < count; j++)
+                {
+                    Console.Write(wordGroup[i, j]);
                 }
             }
             #endregion
